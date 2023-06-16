@@ -1,6 +1,7 @@
+import subprocess
+
 import typer
 import uvicorn
-import subprocess
 
 from core.settings import settings
 

@@ -8,7 +8,7 @@ from core.db.models import Base
 class User(TimestampMixin, Base):
     __tablename__ = "users"
     id = Column(BigInteger, primary_key=True, autoincrement=True)
-    email = Column(String(256), nullable=True, unique=True)
+    email = Column(String(256), nullable=True, unique=True, index=True)
     password = Column(String(256), nullable=False)
     is_active = Column(Boolean, default=True)
 

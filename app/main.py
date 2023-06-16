@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from api.endpoints import routers
 from core.settings import settings
 
 app = FastAPI(
@@ -19,3 +20,4 @@ app.add_middleware(
 )
 
 # register routes
+app.include_router(routers, prefix="/api/v1")

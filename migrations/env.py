@@ -3,9 +3,9 @@ from logging.config import fileConfig
 from alembic import context
 from sqlalchemy import engine_from_config, pool
 
-from models import User  # noqa: F401 pylint:unused-import
 from core.db.models import Base
 from core.settings import settings
+from models import User  # noqa: F401 pylint:unused-import
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
