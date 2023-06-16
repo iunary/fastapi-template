@@ -1,0 +1,8 @@
+tests
+LICENSE
+tox.ini
+.git
+.gitignore
+Dockerfile
+.mypy_cache
+.flake8
