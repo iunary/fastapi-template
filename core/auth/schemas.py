@@ -10,11 +10,6 @@ class Token(BaseModel):
     token_type: str
 
 
-class LoginRequest(BaseModel):
-    email: EmailStr
-    password: str
-
-
 class RegisterRequest(BaseModel):
     email: EmailStr
     password: str
