@@ -5,7 +5,7 @@ from jose import JWTError, jwt
 
 from core.settings import settings
 
-from .schemas import Claims
+from core.auth.schemas import Claims
 
 
 def create_access_token(data: Claims) -> str:
