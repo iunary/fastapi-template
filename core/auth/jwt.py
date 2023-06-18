@@ -3,9 +3,10 @@ from typing import Optional
 
 from jose import JWTError, jwt
 
+from core.auth.schemas import Claims
 from core.settings import settings
 
-from core.auth.schemas import Claims
+BEARER: str = "bearer"
 
 
 def create_access_token(data: Claims) -> str:
@@ -24,7 +25,7 @@ def verify_token(token: str) -> Optional[Claims]:
         payload = jwt.decode(
             token=token, key=settings.JWT_SECRET, algorithms=[settings.JWT_ALGORITHM]
         )
-        email: str = payload.get("sub", None)
+        email = payload.get("sub", None)
         if email is None:
             return None
         return Claims(email=email)

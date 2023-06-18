@@ -1,4 +1,4 @@
-import subprocess
+import subprocess  # nosec
 
 import typer
 import uvicorn
@@ -18,14 +18,22 @@ def run():
 
 @cmd.command(name="migrate")
 def migrate():
-    subprocess.call(["alembic", "upgrade", "head"])
+    process = subprocess.Popen(
+        ["alembic", "upgrade", "head"], stdout=subprocess.PIPE, shell=False
+    )  # nosec
+    print(process.communicate()[0])
 
 
 @cmd.command(name="makemigrations")
 def makemigrations(
     msg: str = typer.Option("autogenerate", "--msg", "-m", help="message")
 ):
-    subprocess.call(["alembic", "revision", "--autogenerate", "-m", f"{msg}"])
+    process = subprocess.Popen(
+        ["alembic", "revision", "--autogenerate", "-m", f"{msg}"],
+        stdout=subprocess.PIPE,
+        shell=False,
+    )  # nosec
+    print(process.communicate()[0])
 
 
 @cmd.command(name="createuser")
