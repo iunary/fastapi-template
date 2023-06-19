@@ -15,7 +15,7 @@ class AuthBearer(HTTPBearer):
         credentials: Optional[HTTPAuthorizationCredentials] = await super().__call__(
             request
         )
-        if credentials and not credentials.schema == "Bearer":
+        if credentials and not credentials.scheme.lower() == "bearer":
             raise HTTPException(
                 status_code=status.HTTP_401_UNAUTHORIZED,
                 detail="invalid authorization schema",
@@ -45,4 +45,5 @@ class AuthBearer(HTTPBearer):
                 detail="please confirm your account",
             )
 
+        request.state.user = user.email
         return user
