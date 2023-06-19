@@ -1,0 +1,11 @@
+fastapi==0.97.0
+psycopg2-binary==2.9.6
+pydantic==1.10.9
+uvicorn==0.22.0
+passlib==1.7.4
+types-passlib==1.7.7.12
+python-jose==3.3.0
+types-python-jose==3.3.4.7
+python-multipart==0.0.6
+alembic==1.11.1
+typer==0.9.0
