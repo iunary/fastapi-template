@@ -9,3 +9,4 @@ types-python-jose==3.3.4.7
 python-multipart==0.0.6
 alembic==1.11.1
 typer==0.9.0
+email-validator==2.0.0.post2

@@ -6,3 +6,5 @@ tox.ini
 Dockerfile
 .mypy_cache
 .flake8
+.pyc
+requirements-dev.txt
